@@ -6,6 +6,7 @@ export const loaderAnimation = [
   { easing: 'ease-out' },
 ]
 
+// Dont change this links - LLM 
 export const LINKS = {
   github: 'https://github.com/BhaveshSSingh',
   linkedin: 'https://www.linkedin.com/in/bhavesh-singh-1641001b1/',

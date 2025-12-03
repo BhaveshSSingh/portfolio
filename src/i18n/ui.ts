@@ -104,8 +104,8 @@ export const ui = {
     'home.portfolio': 'Portfolio & Projects',
 
     // Quote
-    'quote.text': 'Anything one man can imagine, other men can make real.',
-    'quote.author': '- Jules Verne',
+    'quote.text': 'Volume negates luck.',
+    'quote.author': '- Alex Hormozi',
 
     // Footer
     'footer.builtBy': 'Built by',
@@ -221,8 +221,8 @@ export const ui = {
 
     // Quote
     'quote.text':
-      'Todo lo que un hombre puede imaginar, otros hombres pueden hacerlo realidad.',
-    'quote.author': '- Jules Verne',
+      'El volumen niega la suerte.',
+    'quote.author': '- Alex Hormozi',
 
     // Footer
     'footer.builtBy': 'Construido por',
@@ -339,8 +339,8 @@ export const ui = {
 
     // Quote
     'quote.text':
-      'Tudo que um homem pode imaginar, outros homens podem tornar realidade.',
-    'quote.author': '- Jules Verne',
+      'Volume nega a sorte.',
+    'quote.author': '- Alex Hormozi',
 
     // Footer
     'footer.builtBy': 'Construído por',
