@@ -37,7 +37,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'welcome',
     'intro.title':
-      "Hi, I'm <b>Andrés Camilo Plaza</b>, a software developer, systems engineer and tattoo artist with strong focus on the user experience, animations and micro interactions. I love to create beautiful and functional interfaces, I am passionate about technology and I am always looking for new challenges.",
+      "Hi, I'm <b>Bhavesh Singh</b>, a Software Engineer based in Mumbai. I specialize in building scalable web applications, AI solutions, and optimizing performance. I'm passionate about technology and always looking for new challenges.",
     'intro.sr.github': 'GitHub Profile',
     'intro.sr.linkedin': 'Linkedin Profile',
     'intro.sr.email': 'Email contact',
@@ -45,15 +45,15 @@ export const ui = {
     // About Me
     'about.title': 'About me',
     'about.description':
-      "Hi, I'm Andrés, a fullstack software developer from Colombia 🇨🇴.",
+      "Hi, I'm Bhavesh, a Software Engineer from Mumbai, India.",
     'about.tools': 'My primary tools of choice includes:',
     'about.hobbies':
-      "Beyond coding, I'm passionate about tattoo, soccer and traveling. An unusual hobby of mine is play classical music in the guitar or ukulele.",
+      "Beyond coding, I enjoy exploring new technologies and building innovative solutions.",
 
     // Now Card
     'now.title': 'Now',
     'now.whatsThat': "what's that ?",
-    'now.description': 'Currently working as freelancer',
+    'now.description': 'Currently working at Schbang Labs',
 
     // Experience Card
     'experience.title': 'Experience',
@@ -71,9 +71,9 @@ export const ui = {
     'contacts.socials': 'Socials',
 
     // Tattoo Card
-    'tattoo.title': 'Instagram tattoo',
+    'tattoo.title': 'Instagram',
     'tattoo.description':
-      "If you want to see my tattoo's, you can follow me on Instagram.",
+      "Follow me on Instagram.",
 
     // Study Card
     'study.title': 'Study',
@@ -98,9 +98,9 @@ export const ui = {
     '404.goHome': 'Go back home',
 
     // Home Page
-    'home.title': 'Andrés Plaza - Full Stack Developer',
+    'home.title': 'Bhavesh Singh - Software Engineer',
     'home.description':
-      'Andrés Plaza - Full Stack Developer - Portfolio, Projects, CV, About Me, Contact, Timezone, Now, Experience, Tattoo, Study',
+      'Bhavesh Singh - Software Engineer - Portfolio, Projects, CV, About Me, Contact, Timezone, Now, Experience, Study',
     'home.portfolio': 'Portfolio & Projects',
 
     // Quote
@@ -116,86 +116,31 @@ export const ui = {
     // Experience - Common
     'experience.current': 'Current',
 
-    // Experience - Mercado Libre
-    'experience.mercadolibre.company': 'Mercado Libre',
-    'experience.mercadolibre.position': 'Software Engineer',
-    'experience.mercadolibre.location': 'Bogotá D C, Colombia',
-    'experience.mercadolibre.tasks.0':
-      'Development and maintenance of scalable web applications using modern technologies',
-    'experience.mercadolibre.tasks.1':
-      'Collaboration with cross-functional teams to deliver high-quality products',
-    'experience.mercadolibre.tasks.2':
-      'Implementation of best practices and clean code principles',
+    // Experience - Schbang Labs
+    'experience.schbang.company': 'Schbang Labs',
+    'experience.schbang.position': 'Team Lead - Building AI Solutions',
+    'experience.schbang.location': 'Mumbai, India',
+    'experience.schbang.tasks.0':
+      'Researched and improved RAG (Retrieval-Augmented Generation) output by 3x using modern RAG preprocessing techniques and vector database optimization.',
+    'experience.schbang.tasks.1':
+      'Architected and developed Expertap UI with Redux state management, improving code maintainability by 60% and developer experience.',
+    'experience.schbang.tasks.2':
+      'Led cross-functional team of 5 engineers to build various products, collaborating with stakeholders and ensuring successful project delivery.',
+    'experience.schbang.tasks.3':
+      'Led frontend architecture and development for Schbang Labs website, implementing modern React patterns and performance optimizations that increased page load speed by 40%.',
 
-    // Experience - Straico
-    'experience.straico.company': 'Straico',
-    'experience.straico.position': 'Software Engineer',
-    'experience.straico.location': 'Bogotá D C, Colombia',
-    'experience.straico.tasks.0':
-      'Integration of AI services and APIs using React and Tailwind CSS',
-    'experience.straico.tasks.1':
-      'Design and implementation of MongoDB database schemas and queries',
-    'experience.straico.tasks.2':
-      'Development of user interfaces with focus on performance and accessibility',
-
-    // Experience - Spot2
-    'experience.spot2.company': 'Spot2',
-    'experience.spot2.position': 'Software Engineer',
-    'experience.spot2.location': 'Mexico City, Mexico',
-    'experience.spot2.tasks.0':
-      'Full-stack development of the Spot2 platform using React, Redux, and Material UI',
-    'experience.spot2.tasks.1':
-      'Implementation of interactive maps and location services using Google Maps API',
-    'experience.spot2.tasks.2':
-      'Development of internal management platform with React and Redux for state management',
-    'experience.spot2.tasks.3':
-      'Quality assurance, testing, and debugging of production applications',
-
-    // Experience - Imaginamos
-    'experience.imaginamos.company': 'Imaginamos',
-    'experience.imaginamos.position': 'Frontend Developer',
-    'experience.imaginamos.location': 'Bogotá D C, Colombia',
-    'experience.imaginamos.tasks.0':
-      'Development of responsive web applications using React, Redux, and Material UI',
-    'experience.imaginamos.tasks.1':
-      'Implementation of features for ETB telecommunications project',
-    'experience.imaginamos.tasks.2':
-      'Collaboration with design and backend teams to ensure seamless user experience',
-
-    // Experience - INETUM
-    'experience.inetum.company': 'INETUM',
-    'experience.inetum.position': 'Frontend Developer',
-    'experience.inetum.location': 'Bogotá D C, Colombia',
-    'experience.inetum.tasks.0':
-      'Quality assurance support, bug tracking, and code review processes',
-    'experience.inetum.tasks.1':
-      'Agile development using SCRUM methodology in cross-functional teams',
-    'experience.inetum.tasks.2':
-      'Development of Claro projects using React and Angular frameworks',
-    'experience.inetum.tasks.3':
-      'Implementation of Redux Toolkit for state management, improving development efficiency',
-
-    // Experience - SIG
-    'experience.sig.company': 'S I G',
-    'experience.sig.position': 'Software Developer',
-    'experience.sig.location': 'Bogotá D C, Colombia',
-    'experience.sig.tasks.0':
-      'Development of admin dashboard using React Admin and Chart.js for data visualization',
-    'experience.sig.tasks.1':
-      'Implementation of data management and entry forms with validation',
-
-    // Experience - BOOKII
-    'experience.bookii.company': 'BOOKII',
-    'experience.bookii.position': 'Software Developer',
-    'experience.bookii.location': 'Bogotá D C, Colombia',
-    'experience.bookii.tasks.0':
-      'Collaboration with backend team to develop conversational club features',
-    'experience.bookii.tasks.1':
-      'Implementation of conversational clubs using Redux for state management',
-    'experience.bookii.tasks.2':
-      'Localization and content management of Bookii Spanish website',
-    'experience.bookii.tasks.3':
-      'Static site generation using Gatsby and Contentful CMS for blog content',
+    // Experience - Level SuperMind
+    'experience.level.company': 'Level SuperMind',
+    'experience.level.position': 'Software Engineer',
+    'experience.level.location': 'Mumbai, India',
+    'experience.level.tasks.0':
+      'Rebuilt Level SuperMind website from ground up using Next.js, achieving 45% faster load times and 25% increase in user engagement.',
+    'experience.level.tasks.1':
+      'Managed backend development for Level SuperMind platform serving 10K+ daily active users.',
+    'experience.level.tasks.2':
+      'Led frontend engineering initiatives across Level SuperMind platform, implementing modern React architecture and user experience improvements.',
+    'experience.level.tasks.3':
+      'Built encrypted journal feature from scratch using AWS KMS encryption, ensuring enterprise-grade security for 50K+ user entries.',
   },
   es: {
     // Navigation
@@ -208,7 +153,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'bienvenido',
     'intro.title':
-      'Hola, soy <b>Andrés Camilo Plaza</b>, desarrollador de software, ingeniero de sistemas y artista del tatuaje con un fuerte enfoque en la experiencia del usuario, animaciones y micro interacciones. Me encanta crear interfaces hermosas y funcionales, soy apasionado por la tecnología y siempre estoy buscando nuevos desafíos.',
+      'Hola, soy <b>Bhavesh Singh</b>, un Ingeniero de Software basado en Mumbai. Me especializo en construir aplicaciones web escalables, soluciones de IA y optimización de rendimiento.',
     'intro.sr.github': 'Perfil de GitHub',
     'intro.sr.linkedin': 'Perfil de Linkedin',
     'intro.sr.email': 'Contacto por correo',
@@ -216,15 +161,15 @@ export const ui = {
     // About Me
     'about.title': 'Acerca de mí',
     'about.description':
-      'Hola, soy Andrés, un desarrollador de software fullstack de Colombia 🇨🇴.',
+      'Hola, soy Bhavesh, un Ingeniero de Software de Mumbai, India.',
     'about.tools': 'Mis herramientas principales incluyen:',
     'about.hobbies':
-      'Más allá de la programación, soy apasionado por los tatuajes, el fútbol y los viajes. Un hobby inusual mío es tocar música clásica en la guitarra o el ukelele.',
+      'Más allá de la programación, disfruto explorando nuevas tecnologías y construyendo soluciones innovadoras.',
 
     // Now Card
     'now.title': 'Ahora',
     'now.whatsThat': '¿qué es eso?',
-    'now.description': 'Actualmente trabajando como freelancer',
+    'now.description': 'Actualmente trabajando en Schbang Labs',
 
     // Experience Card
     'experience.title': 'Experiencia',
@@ -242,9 +187,9 @@ export const ui = {
     'contacts.socials': 'Redes sociales',
 
     // Tattoo Card
-    'tattoo.title': 'Instagram tatuajes',
+    'tattoo.title': 'Instagram',
     'tattoo.description':
-      'Si quieres ver mis tatuajes, puedes seguirme en Instagram.',
+      'Sígueme en Instagram.',
 
     // Study Card
     'study.title': 'Estudios',
@@ -269,9 +214,9 @@ export const ui = {
     '404.goHome': 'Volver al inicio',
 
     // Home Page
-    'home.title': 'Andrés Plaza - Desarrollador Full Stack',
+    'home.title': 'Bhavesh Singh - Ingeniero de Software',
     'home.description':
-      'Andrés Plaza - Desarrollador Full Stack - Portafolio, Proyectos, CV, Acerca de Mí, Contacto, Zona Horaria, Ahora, Experiencia, Tatuajes, Estudios',
+      'Bhavesh Singh - Ingeniero de Software - Portafolio, Proyectos, CV, Acerca de Mí, Contacto, Zona Horaria, Ahora, Experiencia, Estudios',
     'home.portfolio': 'Portafolio y Proyectos',
 
     // Quote
@@ -288,86 +233,31 @@ export const ui = {
     // Experience - Common
     'experience.current': 'Actual',
 
-    // Experience - Mercado Libre
-    'experience.mercadolibre.company': 'Mercado Libre',
-    'experience.mercadolibre.position': 'Ingeniero de Software',
-    'experience.mercadolibre.location': 'Bogotá D C, Colombia',
-    'experience.mercadolibre.tasks.0':
-      'Desarrollo y mantenimiento de aplicaciones web escalables usando tecnologías modernas',
-    'experience.mercadolibre.tasks.1':
-      'Colaboración con equipos multidisciplinarios para entregar productos de alta calidad',
-    'experience.mercadolibre.tasks.2':
-      'Implementación de mejores prácticas y principios de código limpio',
+    // Experience - Schbang Labs
+    'experience.schbang.company': 'Schbang Labs',
+    'experience.schbang.position': 'Líder de Equipo - Soluciones de IA',
+    'experience.schbang.location': 'Mumbai, India',
+    'experience.schbang.tasks.0':
+      'Investigación y mejora de resultados RAG (Generación Aumentada por Recuperación) en 3x utilizando técnicas modernas de preprocesamiento RAG y optimización de bases de datos vectoriales.',
+    'experience.schbang.tasks.1':
+      'Arquitectura y desarrollo de UI de Expertap con gestión de estado Redux, mejorando la mantenibilidad del código en un 60% y la experiencia del desarrollador.',
+    'experience.schbang.tasks.2':
+      'Liderazgo de equipo multifuncional de 5 ingenieros para construir varios productos, colaborando con partes interesadas y asegurando la entrega exitosa del proyecto.',
+    'experience.schbang.tasks.3':
+      'Liderazgo de arquitectura frontend y desarrollo para el sitio web de Schbang Labs, implementando patrones modernos de React y optimizaciones de rendimiento que aumentaron la velocidad de carga de la página en un 40%.',
 
-    // Experience - Straico
-    'experience.straico.company': 'Straico',
-    'experience.straico.position': 'Ingeniero de Software',
-    'experience.straico.location': 'Bogotá D C, Colombia',
-    'experience.straico.tasks.0':
-      'Integración de servicios de IA y APIs usando React y Tailwind CSS',
-    'experience.straico.tasks.1':
-      'Diseño e implementación de esquemas y consultas de base de datos MongoDB',
-    'experience.straico.tasks.2':
-      'Desarrollo de interfaces de usuario con enfoque en rendimiento y accesibilidad',
-
-    // Experience - Spot2
-    'experience.spot2.company': 'Spot2',
-    'experience.spot2.position': 'Ingeniero de Software',
-    'experience.spot2.location': 'Ciudad de México, México',
-    'experience.spot2.tasks.0':
-      'Desarrollo full-stack de la plataforma Spot2 usando React, Redux y Material UI',
-    'experience.spot2.tasks.1':
-      'Implementación de mapas interactivos y servicios de ubicación usando Google Maps API',
-    'experience.spot2.tasks.2':
-      'Desarrollo de plataforma interna de gestión con React y Redux para manejo de estado',
-    'experience.spot2.tasks.3':
-      'Aseguramiento de calidad, pruebas y depuración de aplicaciones en producción',
-
-    // Experience - Imaginamos
-    'experience.imaginamos.company': 'Imaginamos',
-    'experience.imaginamos.position': 'Desarrollador Frontend',
-    'experience.imaginamos.location': 'Bogotá D C, Colombia',
-    'experience.imaginamos.tasks.0':
-      'Desarrollo de aplicaciones web responsivas usando React, Redux y Material UI',
-    'experience.imaginamos.tasks.1':
-      'Implementación de funcionalidades para proyecto de telecomunicaciones ETB',
-    'experience.imaginamos.tasks.2':
-      'Colaboración con equipos de diseño y backend para garantizar experiencia de usuario fluida',
-
-    // Experience - INETUM
-    'experience.inetum.company': 'INETUM',
-    'experience.inetum.position': 'Desarrollador Frontend',
-    'experience.inetum.location': 'Bogotá D C, Colombia',
-    'experience.inetum.tasks.0':
-      'Soporte en aseguramiento de calidad, seguimiento de bugs y procesos de revisión de código',
-    'experience.inetum.tasks.1':
-      'Desarrollo ágil usando metodología SCRUM en equipos multidisciplinarios',
-    'experience.inetum.tasks.2':
-      'Desarrollo de proyectos Claro usando frameworks React y Angular',
-    'experience.inetum.tasks.3':
-      'Implementación de Redux Toolkit para manejo de estado, mejorando la eficiencia en desarrollo',
-
-    // Experience - SIG
-    'experience.sig.company': 'S I G',
-    'experience.sig.position': 'Desarrollador de Software',
-    'experience.sig.location': 'Bogotá D C, Colombia',
-    'experience.sig.tasks.0':
-      'Desarrollo de dashboard administrativo usando React Admin y Chart.js para visualización de datos',
-    'experience.sig.tasks.1':
-      'Implementación de formularios de gestión e ingreso de datos con validación',
-
-    // Experience - BOOKII
-    'experience.bookii.company': 'BOOKII',
-    'experience.bookii.position': 'Desarrollador de Software',
-    'experience.bookii.location': 'Bogotá D C, Colombia',
-    'experience.bookii.tasks.0':
-      'Colaboración con equipo de backend para desarrollar funcionalidades de clubes conversacionales',
-    'experience.bookii.tasks.1':
-      'Implementación de clubes conversacionales usando Redux para manejo de estado',
-    'experience.bookii.tasks.2':
-      'Localización y gestión de contenido del sitio web Bookii en español',
-    'experience.bookii.tasks.3':
-      'Generación de sitios estáticos usando Gatsby y Contentful CMS para contenido del blog',
+    // Experience - Level SuperMind
+    'experience.level.company': 'Level SuperMind',
+    'experience.level.position': 'Ingeniero de Software',
+    'experience.level.location': 'Mumbai, India',
+    'experience.level.tasks.0':
+      'Reconstrucción del sitio web de Level SuperMind desde cero usando Next.js, logrando tiempos de carga 45% más rápidos y un aumento del 25% en la participación de los usuarios.',
+    'experience.level.tasks.1':
+      'Gestión del desarrollo backend para la plataforma Level SuperMind sirviendo a más de 10K usuarios activos diarios.',
+    'experience.level.tasks.2':
+      'Liderazgo de iniciativas de ingeniería frontend en toda la plataforma Level SuperMind, implementando arquitectura moderna de React y mejoras en la experiencia del usuario.',
+    'experience.level.tasks.3':
+      'Construcción de función de diario encriptado desde cero usando encriptación AWS KMS, asegurando seguridad de grado empresarial para más de 50K entradas de usuarios.',
   },
   pt: {
     // Navigation
@@ -380,7 +270,7 @@ export const ui = {
     // Intro Card
     'intro.welcome': 'bem-vindo',
     'intro.title':
-      'Olá, sou <b>Andrés Camilo Plaza</b>, desenvolvedor de software, engenheiro de sistemas e artista de tatuagem com forte foco na experiência do usuário, animações e micro interações. Adoro criar interfaces bonitas e funcionais, sou apaixonado por tecnologia e sempre estou em busca de novos desafios.',
+      'Olá, sou <b>Bhavesh Singh</b>, um Engenheiro de Software baseado em Mumbai. Especializo-me na construção de aplicações web escaláveis, soluções de IA e otimização de desempenho.',
     'intro.sr.github': 'Perfil do GitHub',
     'intro.sr.linkedin': 'Perfil do Linkedin',
     'intro.sr.email': 'Contato por e-mail',
@@ -388,15 +278,15 @@ export const ui = {
     // About Me
     'about.title': 'Sobre mim',
     'about.description':
-      'Olá, sou Andrés, desenvolvedor de software fullstack da Colômbia 🇨🇴.',
+      'Olá, sou Bhavesh, um Engenheiro de Software de Mumbai, Índia.',
     'about.tools': 'Minhas principais ferramentas incluem:',
     'about.hobbies':
-      'Além da programação, sou apaixonado por tatuagens, futebol e viagens. Um hobby incomum meu é tocar música clássica no violão ou ukulele.',
+      'Além da programação, gosto de explorar novas tecnologias e construir soluções inovadoras.',
 
     // Now Card
     'now.title': 'Agora',
     'now.whatsThat': 'o que é isso?',
-    'now.description': 'Atualmente trabalhando como freelancer',
+    'now.description': 'Atualmente trabalhando na Schbang Labs',
 
     // Experience Card
     'experience.title': 'Experiência',
@@ -414,9 +304,9 @@ export const ui = {
     'contacts.socials': 'Redes sociais',
 
     // Tattoo Card
-    'tattoo.title': 'Instagram tatuagens',
+    'tattoo.title': 'Instagram',
     'tattoo.description':
-      'Se você quiser ver minhas tatuagens, pode me seguir no Instagram.',
+      'Siga-me no Instagram.',
 
     // Study Card
     'study.title': 'Estudos',
@@ -442,9 +332,9 @@ export const ui = {
     '404.goHome': 'Voltar ao início',
 
     // Home Page
-    'home.title': 'Andrés Plaza - Desenvolvedor Full Stack',
+    'home.title': 'Bhavesh Singh - Engenheiro de Software',
     'home.description':
-      'Andrés Plaza - Desenvolvedor Full Stack - Portfólio, Projetos, CV, Sobre Mim, Contato, Fuso Horário, Agora, Experiência, Tatuagens, Estudos',
+      'Bhavesh Singh - Engeniero de Software - Portfólio, Projetos, CV, Sobre Mim, Contato, Fuso Horário, Agora, Experiência, Estudos',
     'home.portfolio': 'Portfólio e Projetos',
 
     // Quote
@@ -461,86 +351,31 @@ export const ui = {
     // Experience - Common
     'experience.current': 'Atual',
 
-    // Experience - Mercado Libre
-    'experience.mercadolibre.company': 'Mercado Livre',
-    'experience.mercadolibre.position': 'Engenheiro de Software',
-    'experience.mercadolibre.location': 'Bogotá D C, Colômbia',
-    'experience.mercadolibre.tasks.0':
-      'Desenvolvimento e manutenção de aplicações web escaláveis usando tecnologias modernas',
-    'experience.mercadolibre.tasks.1':
-      'Colaboração com equipes multidisciplinares para entregar produtos de alta qualidade',
-    'experience.mercadolibre.tasks.2':
-      'Implementação de melhores práticas e princípios de código limpo',
+    // Experience - Schbang Labs
+    'experience.schbang.company': 'Schbang Labs',
+    'experience.schbang.position': 'Líder de Equipe - Soluções de IA',
+    'experience.schbang.location': 'Mumbai, Índia',
+    'experience.schbang.tasks.0':
+      'Pesquisou e melhorou a saída RAG (Geração Aumentada por Recuperação) em 3x usando técnicas modernas de pré-processamento RAG e otimização de banco de dados vetorial.',
+    'experience.schbang.tasks.1':
+      'Arquitetou e desenvolveu a UI do Expertap com gerenciamento de estado Redux, melhorando a manutenibilidade do código em 60% e a experiência do desenvolvedor.',
+    'experience.schbang.tasks.2':
+      'Liderou equipe multifuncional de 5 engenheiros para construir vários produtos, colaborando com partes interessadas e garantindo a entrega bem-sucedida do projeto.',
+    'experience.schbang.tasks.3':
+      'Liderou a arquitetura frontend e desenvolvimento para o site da Schbang Labs, implementando padrões modernos de React e otimizações de desempenho que aumentaram a velocidade de carregamento da página em 40%.',
 
-    // Experience - Straico
-    'experience.straico.company': 'Straico',
-    'experience.straico.position': 'Engenheiro de Software',
-    'experience.straico.location': 'Bogotá D C, Colômbia',
-    'experience.straico.tasks.0':
-      'Integração de serviços de IA e APIs usando React e Tailwind CSS',
-    'experience.straico.tasks.1':
-      'Design e implementação de esquemas e consultas de banco de dados MongoDB',
-    'experience.straico.tasks.2':
-      'Desenvolvimento de interfaces de usuário com foco em performance e acessibilidade',
-
-    // Experience - Spot2
-    'experience.spot2.company': 'Spot2',
-    'experience.spot2.position': 'Engenheiro de Software',
-    'experience.spot2.location': 'Cidade do México, México',
-    'experience.spot2.tasks.0':
-      'Desenvolvimento full-stack da plataforma Spot2 usando React, Redux e Material UI',
-    'experience.spot2.tasks.1':
-      'Implementação de mapas interativos e serviços de localização usando Google Maps API',
-    'experience.spot2.tasks.2':
-      'Desenvolvimento de plataforma interna de gestão com React e Redux para gerenciamento de estado',
-    'experience.spot2.tasks.3':
-      'Garantia de qualidade, testes e depuração de aplicações em produção',
-
-    // Experience - Imaginamos
-    'experience.imaginamos.company': 'Imaginamos',
-    'experience.imaginamos.position': 'Desenvolvedor Frontend',
-    'experience.imaginamos.location': 'Bogotá D C, Colômbia',
-    'experience.imaginamos.tasks.0':
-      'Desenvolvimento de aplicações web responsivas usando React, Redux e Material UI',
-    'experience.imaginamos.tasks.1':
-      'Implementação de funcionalidades para projeto de telecomunicações ETB',
-    'experience.imaginamos.tasks.2':
-      'Colaboração com equipes de design e backend para garantir experiência de usuário fluida',
-
-    // Experience - INETUM
-    'experience.inetum.company': 'INETUM',
-    'experience.inetum.position': 'Desenvolvedor Frontend',
-    'experience.inetum.location': 'Bogotá D C, Colômbia',
-    'experience.inetum.tasks.0':
-      'Suporte em garantia de qualidade, rastreamento de bugs e processos de revisão de código',
-    'experience.inetum.tasks.1':
-      'Desenvolvimento ágil usando metodologia SCRUM em equipes multidisciplinares',
-    'experience.inetum.tasks.2':
-      'Desenvolvimento de projetos Claro usando frameworks React e Angular',
-    'experience.inetum.tasks.3':
-      'Implementação de Redux Toolkit para gerenciamento de estado, melhorando a eficiência em desenvolvimento',
-
-    // Experience - SIG
-    'experience.sig.company': 'S I G',
-    'experience.sig.position': 'Desenvolvedor de Software',
-    'experience.sig.location': 'Bogotá D C, Colômbia',
-    'experience.sig.tasks.0':
-      'Desenvolvimento de dashboard administrativo usando React Admin e Chart.js para visualização de dados',
-    'experience.sig.tasks.1':
-      'Implementação de formulários de gerenciamento e entrada de dados com validação',
-
-    // Experience - BOOKII
-    'experience.bookii.company': 'BOOKII',
-    'experience.bookii.position': 'Desenvolvedor de Software',
-    'experience.bookii.location': 'Bogotá D C, Colômbia',
-    'experience.bookii.tasks.0':
-      'Colaboração com equipe de backend para desenvolver funcionalidades de clubes conversacionais',
-    'experience.bookii.tasks.1':
-      'Implementação de clubes conversacionais usando Redux para gerenciamento de estado',
-    'experience.bookii.tasks.2':
-      'Localização e gestão de conteúdo do site Bookii em espanhol',
-    'experience.bookii.tasks.3':
-      'Geração de sites estáticos usando Gatsby e Contentful CMS para conteúdo do blog',
+    // Experience - Level SuperMind
+    'experience.level.company': 'Level SuperMind',
+    'experience.level.position': 'Engenheiro de Software',
+    'experience.level.location': 'Mumbai, Índia',
+    'experience.level.tasks.0':
+      'Reconstruiu o site Level SuperMind do zero usando Next.js, alcançando tempos de carregamento 45% mais rápidos e aumento de 25% no engajamento do usuário.',
+    'experience.level.tasks.1':
+      'Gerenciou o desenvolvimento backend para a plataforma Level SuperMind servindo mais de 10K usuários ativos diários.',
+    'experience.level.tasks.2':
+      'Liderou iniciativas de engenharia frontend em toda a plataforma Level SuperMind, implementando arquitetura moderna de React e melhorias na experiência do usuário.',
+    'experience.level.tasks.3':
+      'Construiu recurso de diário criptografado do zero usando criptografia AWS KMS, garantindo segurança de nível empresarial para mais de 50K entradas de usuários.',
   },
 } as const
 
