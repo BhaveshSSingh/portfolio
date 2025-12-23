@@ -1,0 +1,63 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  const workEntries = await getCollection('work');
+  return workEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={`${entry.data.title || entry.data.company} - ${t('home.title')}`} description={entry.data.role}>
+  <main class="mx-auto max-w-2xl px-6 py-24 text-gray-300">
+    <article class="space-y-8">
+      <div class="space-y-4">
+        <div class="flex justify-between items-baseline">
+            <h1 class="text-4xl font-bold tracking-tight text-white">{entry.data.title || entry.data.company}</h1>
+            <a href="/work" class="text-gray-500 font-mono hover:text-white transition-colors">← back</a>
+        </div>
+        <div class="flex justify-between items-center text-gray-500 font-mono text-sm">
+          <p>{entry.data.role}</p>
+          <p>{entry.data.dateStart} — {entry.data.dateEnd}</p>
+        </div>
+      </div>
+
+      <div class="h-px bg-white/10 w-full"></div>
+
+      <div class="prose prose-invert max-w-none 
+        prose-headings:text-white prose-headings:font-semibold
+        prose-p:text-gray-300 prose-p:leading-relaxed
+        prose-li:text-gray-300
+        prose-a:text-white prose-a:underline hover:prose-a:text-gray-400
+        prose-strong:text-white
+        ">
+        <Content />
+      </div>
+
+      {entry.data.originalPost && (
+        <div class="pt-8">
+           <a href={entry.data.originalPost} target="_blank" class="text-white text-sm font-mono hover:underline decoration-gray-600 underline-offset-4 inline-block">
+            View original post →
+          </a>
+        </div>
+      )}
+    </article>
+
+    <div class="pt-24 text-gray-600 text-xs font-mono">
+      2025 © Bhavesh Singh.
+    </div>
+  </main>
+</BaseLayout>

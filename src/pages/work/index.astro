@@ -40,7 +40,14 @@ const sortedWork = workEntries.sort((a, b) => {
               </p>
             </div>
             <p class="text-gray-400 line-clamp-2 text-lg">
-              {entry.body.split('\n').find(line => line.trim().length > 0 && !line.startsWith('#') && !line.startsWith('-') && !line.startsWith('<') && !line.startsWith('[')) || 'Read more...'}
+              {entry.body.split('\n')
+                .map(line => line.trim())
+                .find(line => 
+                  line.length > 0 && 
+                  !line.startsWith('#') && 
+                  !line.startsWith('<') && 
+                  !line.startsWith('[')
+                )?.replace(/^[-*]\s+/, '') || 'Read more...'}
             </p>
             <a href={entry.data.originalPost || `/work/${entry.slug}`} target={entry.data.originalPost ? "_blank" : "_self"} class="text-white text-sm font-mono hover:underline decoration-gray-600 underline-offset-4 inline-block">
               Read story →
