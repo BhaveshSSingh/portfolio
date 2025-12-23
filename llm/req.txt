@@ -1,0 +1,15 @@
+1. remove the header and add the github link below, with email
+2. Also change the header text something like (I am Bhavesh, i enjoy making tech products but also provide value outside of tech you can read here - link to the linkedin post) also add you are currently diving deep in the world of AI and building awesome ai products at schbanglabs. https://schbanglabs.com/ with website link
+Also add link of second brain https://secondbrain.schbanglabs.com/
+3. Below for personaization also add i also like lifting weights and watching anime 
+
+
+1. WHen i click on work 
+    It should open a work page
+    this page should like a blog page : with header and sub header
+    For the post 
+    add this https://www.linkedin.com/posts/levelsupermind_story-of-bhavesh-singh-from-intern-to-team-activity-7320419727367979008-PGK-
+    (Generate the content for the post from this link also add the image and provide the link to the orignal post)
+
+
+4. Remove the falling animation and make the UI more minimal use pure black as background and gray-300 as text

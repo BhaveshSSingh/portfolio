@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const workEntries = await getCollection('work')
+
+const sortedWork = workEntries.sort((a, b) => {
+  const dateA = new Date(a.data.dateStart).getTime()
+  const dateB = new Date(b.data.dateStart).getTime()
+  return dateB - dateA
+})
+---
+
+<BaseLayout title={`Work - ${t('home.title')}`} description="My work experience and stories.">
+  <main class="mx-auto max-w-2xl px-6 py-24 text-gray-300">
+    <section class="space-y-12">
+      <div class="flex justify-between items-baseline">
+        <h1 class="text-4xl font-bold tracking-tight text-white transition-opacity duration-300">Work</h1>
+        <a href="/" class="text-gray-500 font-mono hover:text-white transition-colors">← back</a>
+      </div>
+
+      <div class="space-y-12">
+        {sortedWork.map((entry) => (
+          <article class="space-y-4 group">
+            <div class="flex justify-between items-start">
+              <div>
+                <h2 class="text-xl font-semibold text-white">
+                  <a href={entry.data.originalPost || `/work/${entry.slug}`} target={entry.data.originalPost ? "_blank" : "_self"} class="hover:underline decoration-gray-600 underline-offset-4">
+                    {entry.data.title || entry.data.company}
+                  </a>
+                </h2>
+                <p class="text-gray-500 font-mono text-sm">{entry.data.role}</p>
+              </div>
+              <p class="text-gray-600 font-mono text-xs whitespace-nowrap ml-4">
+                {entry.data.dateStart} — {entry.data.dateEnd}
+              </p>
+            </div>
+            <p class="text-gray-400 line-clamp-2 text-lg">
+              {entry.body.split('\n').find(line => line.trim().length > 0 && !line.startsWith('#') && !line.startsWith('-') && !line.startsWith('<') && !line.startsWith('[')) || 'Read more...'}
+            </p>
+            <a href={entry.data.originalPost || `/work/${entry.slug}`} target={entry.data.originalPost ? "_blank" : "_self"} class="text-white text-sm font-mono hover:underline decoration-gray-600 underline-offset-4 inline-block">
+              Read story →
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="pt-24 text-gray-600 text-xs font-mono">
+        2025 © Bhavesh Singh.
+      </div>
+    </section>
+  </main>
+</BaseLayout>

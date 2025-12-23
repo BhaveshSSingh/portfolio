@@ -1,15 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import IntroCard from '../components/sections/IntroCard.astro'
-import AboutMe from '../components/sections/AboutMe.astro'
-import Card from '../components/Card.astro'
-import TimeZoneCard from '../components/sections/TimeZoneCard.astro'
-import ContactsCard from '../components/sections/ContactsCard.astro'
-import Now from '../components/sections/Now.astro'
-import CVCard from '../components/sections/CVCard.astro'
-import ExperienceCard from '../components/sections/ExperienceCard.astro'
-import TattooCard from '../components/sections/TattooCard.astro'
-import StudyCard from '../components/sections/StudyCard.astro'
+import { LINKS } from '../lib/constants'
 import {
   getLangFromUrl,
   useTranslations,
@@ -21,98 +12,70 @@ const t = useTranslations(lang)
 const translatePath = useTranslatedPath(lang)
 ---
 
-<script>
-  import { spring, stagger, timeline, type TimelineDefinition } from 'motion'
-  import { loaderAnimation } from '../lib/constants'
-
-  let animationRunning = false
-  let animationTimeout: ReturnType<typeof setTimeout> | null = null
-
-  // Wait for ViewTransitions to complete before animating
-  function initAnimations() {
-    // Prevent multiple simultaneous animations
-    if (animationRunning) return
-
-    const cards = document.querySelectorAll('.card-animate')
-    if (cards.length === 0) return
-
-    // Clear any pending animation
-    if (animationTimeout) {
-      clearTimeout(animationTimeout)
-      animationTimeout = null
-    }
-
-    animationRunning = true
-
-    const sequence = [
-      loaderAnimation,
-      [
-        cards,
-        { y: ['40%', '0%'], opacity: [0, 1] },
-        {
-          at: '-0.1',
-          duration: 0.4,
-          delay: stagger(0.3),
-          easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
-        },
-      ],
-    ]
-
-    timeline(sequence as TimelineDefinition).then(() => {
-      animationRunning = false
-    })
-  }
-
-  // Handle ViewTransitions
-  document.addEventListener('astro:after-swap', () => {
-    // Wait for ViewTransition to complete and DOM to be ready
-    animationTimeout = setTimeout(() => {
-      initAnimations()
-    }, 150)
-  })
-
-  // Initial load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(initAnimations, 100)
-    })
-  } else {
-    // DOM already loaded
-    setTimeout(initAnimations, 100)
-  }
-</script>
-
 <BaseLayout title={t('home.title')} description={t('home.description')}>
-  <div
-    slot="loader"
-    class="loader bg-darkslate-700 fixed bottom-0 left-0 right-0 top-0 z-50 flex h-screen w-screen items-center justify-center text-3xl font-black uppercase text-neutral-50"
-  >
-  </div>
-  <main
-    class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:grid-rows-8 lg:gap-4"
-  >
-    <IntroCard />
-    <AboutMe />
-    <CVCard />
-    <Now />
-    <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-2"
-      title={t('home.portfolio')}
-      href={translatePath('/portfolio')}
-    />
-    <TimeZoneCard />
-    <ContactsCard />
-    <ExperienceCard />
-    <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
-      <div class="flex h-full flex-col justify-between">
-        <blockquote class="mt-6 border-l-2 pl-6 italic">
-          "{t('quote.text')}"
-        </blockquote>
-        <p class="mt-2 text-xs">{t('quote.author')}</p>
+  <main class="mx-auto max-w-2xl px-6 py-24 text-gray-300">
+    <section class="space-y-12">
+      <div class="flex justify-between items-baseline">
+        <h1 class="text-4xl font-bold tracking-tight text-white">Bhavesh Singh</h1>
+        <p class="text-gray-500 font-mono">/home</p>
       </div>
-    </Card>
-    <TattooCard />
-    <StudyCard />
+
+      <div class="space-y-6 text-lg leading-relaxed">
+        <p>
+          I am Bhavesh, I enjoy making tech products but also provide value outside of tech. 
+          You can read about my journey from intern to lead <a href="https://www.linkedin.com/posts/levelsupermind_story-of-bhavesh-singh-from-intern-to-team-activity-7320419727367979008-PGK-" target="_blank" class="text-white underline hover:text-gray-400 decoration-gray-600 underline-offset-4">here</a>.
+        </p>
+        <p>
+          Currently, I am diving deep into the world of AI and building awesome AI products at 
+          <a href="https://schbanglabs.com/" target="_blank" class="text-white underline hover:text-gray-400 decoration-gray-600 underline-offset-4">Schbang</a>.
+        </p>
+        <p>
+          I am also leading the engineering for <a href="https://secondbrain.schbanglabs.com/" target="_blank" class="text-white underline hover:text-gray-400 decoration-gray-600 underline-offset-4">Second Brain for Brands</a> 
+          at Schbang.
+        </p>
+        <p>
+          Beyond tech, I am passionate about lifting weights and watching anime.
+        </p>
+      </div>
+
+      <div class="h-px bg-white/10 w-full my-12"></div>
+
+      <ul class="space-y-4 font-mono text-sm">
+        <li class="flex items-center gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+          <span class="text-gray-500 w-20">LinkedIn</span>
+          <a href={LINKS.linkedin} target="_blank" class="text-white hover:underline">@bhavesh-singh</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+          <span class="text-gray-500 w-20">GitHub</span>
+          <a href={LINKS.github} target="_blank" class="text-white hover:underline">@BhaveshSSingh</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+          <span class="text-gray-500 w-20">Twitter</span>
+          <a href={LINKS.twitter} target="_blank" class="text-white hover:underline">@Bhaveshh_Singh</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+          <span class="text-gray-500 w-20">Resume</span>
+          <a href="/bhaveshsingh.pdf" target="_blank" class="text-white hover:underline">bhaveshsingh.pdf</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+          <span class="text-gray-500 w-20">Email</span>
+          <a href={LINKS.mail} class="text-white hover:underline">bhaveshsinghbiz@gmail.com</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+          <span class="text-gray-500 w-20">Work</span>
+          <a href="/work" class="text-white hover:underline">Work Experience</a>
+        </li>
+      </ul>
+
+      <div class="pt-24 text-gray-600 text-xs font-mono">
+        2025 © Bhavesh Singh.
+      </div>
+    </section>
   </main>
 </BaseLayout>
