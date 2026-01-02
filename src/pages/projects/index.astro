@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const projects = [
+  {
+    title: 'ImageKing',
+    url: 'https://imageking.vercel.app/',
+    description: 'Convert images to WebP format locally - completely free and unlimited. No server uploads, all processing happens in your browser for maximum privacy and speed.',
+    tech: 'Next.js, Client-side Processing',
+  },
+  {
+    title: 'Dev Ledger',
+    url: 'https://dev-ledger.vercel.app/',
+    description: 'My personal coding journal where I gamify learning in a fun way. Features a private authentication system and a clean interface for tracking my development journey.',
+    tech: 'Next.js, Authentication, Gamification',
+  },
+]
+---
+
+<BaseLayout title={`Projects - ${t('home.title')}`} description="Personal projects by Bhavesh Singh">
+  <main class="mx-auto max-w-2xl px-6 py-24 text-gray-300">
+    <section class="space-y-12">
+      <div class="flex justify-between items-baseline">
+        <h1 class="text-4xl font-bold tracking-tight text-white transition-opacity duration-300">Projects</h1>
+        <a href="/" class="text-gray-500 font-mono hover:text-white transition-colors">← back</a>
+      </div>
+
+      <div class="space-y-12">
+        {projects.map((project) => (
+          <article class="space-y-4 group">
+            <div>
+              <h2 class="text-xl font-semibold text-white">
+                <a href={project.url} target="_blank" class="hover:underline decoration-gray-600 underline-offset-4">
+                  {project.title}
+                </a>
+              </h2>
+              <p class="text-gray-500 font-mono text-sm">{project.tech}</p>
+            </div>
+            <p class="text-gray-400 text-lg leading-relaxed">
+              {project.description}
+            </p>
+            <a href={project.url} target="_blank" class="text-white text-sm font-mono hover:underline decoration-gray-600 underline-offset-4 inline-block">
+              Visit project →
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="pt-24 text-gray-600 text-xs font-mono">
+        {new Date().getFullYear()} © Bhavesh Singh.
+      </div>
+    </section>
+  </main>
+</BaseLayout>
