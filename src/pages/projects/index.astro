@@ -6,22 +6,26 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
 const projects = [
-   {
-    title: 'SignalRank',
-    url: 'https://signalrank.vercel.app/',
-    description: 'Track and analyze your brand\'s visibility across AI platforms. Monitor how AI models respond to prompts related to your brand and competitors in real-time.',
-    tech: 'Next.js, AI Analytics, Brand Monitoring',
-  }, {
-    title: 'ImageKing',
-    url: 'https://imageking.vercel.app/',
-    description: 'Convert images to WebP format locally - completely free and unlimited. No server uploads, all processing happens in your browser for maximum privacy and speed.',
-    tech: 'Next.js, Client-side Processing',
-  },
   {
     title: 'Dev Ledger',
     url: 'https://dev-ledger.vercel.app/',
     description: 'My personal coding journal where I gamify learning in a fun way. Features a private authentication system and a clean interface for tracking my development journey.',
     tech: 'Next.js, Authentication, Gamification',
+    thumbnail: '/devledger.png',
+  },
+  {
+    title: 'ImageKing',
+    url: 'https://imageking.vercel.app/',
+    description: 'Convert images to WebP format locally - completely free and unlimited. No server uploads, all processing happens in your browser for maximum privacy and speed.',
+    tech: 'Next.js, Client-side Processing',
+    thumbnail: '/imageking.png',
+  },
+  {
+    title: 'SignalRank',
+    url: 'https://signalrank.vercel.app/',
+    description: 'Track and analyze your brand\'s visibility across AI platforms. Monitor how AI models respond to prompts related to your brand and competitors in real-time.',
+    tech: 'Next.js, AI Analytics, Brand Monitoring',
+    thumbnail: '/signalrank.png',
   }
 ]
 ---
@@ -37,6 +41,15 @@ const projects = [
       <div class="space-y-12">
         {projects.map((project) => (
           <article class="space-y-4 group">
+            {project.thumbnail && (
+              <a href={project.url} target="_blank">
+                <img 
+                  src={project.thumbnail} 
+                  alt={project.title}
+                  class="w-full rounded-lg border border-gray-800 hover:border-gray-600 transition-colors"
+                />
+              </a>
+            )}
             <div>
               <h2 class="text-xl font-semibold text-white">
                 <a href={project.url} target="_blank" class="hover:underline decoration-gray-600 underline-offset-4">
