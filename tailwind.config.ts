@@ -56,6 +56,7 @@ const config = {
       },
       fontFamily: {
         sans: ['Inter', ...fontFamily.sans],
+        mono: ['"JetBrains Mono"', ...fontFamily.mono],
       },
       keyframes: {
         'accordion-down': {

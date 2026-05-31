@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import TabNav from '../../components/TabNav.astro'
 import { getLangFromUrl, useTranslations } from '../../i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
@@ -31,46 +32,81 @@ const projects = [
 ---
 
 <BaseLayout title={`Projects - ${t('home.title')}`} description="Personal projects by Bhavesh Singh">
-  <main class="mx-auto max-w-2xl px-6 py-24 text-gray-300">
-    <section class="space-y-12">
-      <div class="flex justify-between items-baseline">
-        <h1 class="text-4xl font-bold tracking-tight text-white transition-opacity duration-300">Projects</h1>
-        <a href="/" class="text-gray-500 font-mono hover:text-white transition-colors">← back</a>
-      </div>
+  <div class="mx-auto max-w-2xl px-4 pt-4 md:pt-8 pb-10">
+    <div class="flex items-center justify-between">
+      <h1 class="text-xl font-medium tracking-tight text-neutral-50 md:text-2xl">Projects</h1>
+      <a href="/" class="group relative font-mono text-xs font-light text-neutral-500 transition-colors duration-200 hover:text-neutral-200">
+        <span class="relative inline-block">
+          back
+          <span class="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-neutral-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+        </span>
+      </a>
+    </div>
 
-      <div class="space-y-12">
+    <div class="mt-5">
+      <TabNav />
+    </div>
+
+    <p class="mt-5 text-base text-neutral-400 text-pretty">
+      A small collection of side projects I've shipped. Each one started as an itch I wanted to scratch.
+    </p>
+
+    <section class="mt-10">
+      <h2 class="font-mono text-sm uppercase tracking-wide text-neutral-500">Selected work</h2>
+
+      <div class="mt-6 flex flex-col gap-10">
         {projects.map((project) => (
-          <article class="space-y-4 group">
+          <article class="group flex flex-col gap-4">
             {project.thumbnail && (
-              <a href={project.url} target="_blank">
-                <img 
-                  src={project.thumbnail} 
+              <a href={project.url} target="_blank" rel="noopener noreferrer" class="block">
+                <img
+                  src={project.thumbnail}
                   alt={project.title}
-                  class="w-full rounded-lg border border-gray-800 hover:border-gray-600 transition-colors"
+                  class="w-full rounded-md shadow-lg ring-1 ring-white/10 ring-inset transition-all duration-200 group-hover:ring-white/20"
                 />
               </a>
             )}
-            <div>
-              <h2 class="text-xl font-semibold text-white">
-                <a href={project.url} target="_blank" class="hover:underline decoration-gray-600 underline-offset-4">
-                  {project.title}
+
+            <div class="flex flex-col gap-1">
+              <div class="flex items-baseline justify-between gap-6">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group/title relative"
+                >
+                  <span class="relative inline-block">
+                    <span class="text-base font-medium text-neutral-50 transition-colors duration-200 group-hover/title:text-white">
+                      {project.title}
+                    </span>
+                    <span class="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-neutral-600 opacity-0 transition-opacity duration-300 group-hover/title:opacity-100"></span>
+                  </span>
                 </a>
-              </h2>
-              <p class="text-gray-500 font-mono text-sm">{project.tech}</p>
+                <span class="shrink-0 font-mono text-xs font-light text-neutral-500">{project.tech}</span>
+              </div>
+              <p class="text-sm text-neutral-400 text-pretty">
+                {project.description}
+              </p>
             </div>
-            <p class="text-gray-400 text-lg leading-relaxed">
-              {project.description}
-            </p>
-            <a href={project.url} target="_blank" class="text-white text-sm font-mono hover:underline decoration-gray-600 underline-offset-4 inline-block">
-              Visit project →
+
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group/visit relative inline-flex w-fit items-center font-mono text-xs font-light text-neutral-400 transition-colors duration-200 hover:text-neutral-100"
+            >
+              <span class="relative inline-block">
+                Visit project
+                <span class="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-neutral-600 opacity-0 transition-opacity duration-300 group-hover/visit:opacity-100"></span>
+              </span>
             </a>
           </article>
         ))}
       </div>
-
-      <div class="pt-24 text-gray-600 text-xs font-mono">
-        {new Date().getFullYear()} © Bhavesh Singh.
-      </div>
     </section>
-  </main>
+
+    <p class="mt-12 font-mono text-xs font-light text-neutral-600 text-balance">
+      {new Date().getFullYear()} &copy; Bhavesh Singh.
+    </p>
+  </div>
 </BaseLayout>

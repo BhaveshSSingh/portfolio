@@ -1,0 +1,32 @@
+---
+import type { Post } from '../lib/posts'
+import { formatPostDate } from '../lib/posts'
+
+interface Props {
+  post: Post
+}
+
+const { post } = Astro.props
+const isDisabled = post.url === '#'
+const isExternal = post.url.startsWith('http')
+---
+
+{isDisabled ? (
+  <div class="group flex items-center justify-between gap-20 md:gap-20">
+    <span class="text-foreground/50 truncate">
+      {post.title}
+      <span class="font-mono text-xs font-light text-foreground/40 ml-2">(coming soon)</span>
+    </span>
+    <span class="text-foreground/50 shrink-0 font-mono text-xs font-light">{formatPostDate(post.date)}</span>
+  </div>
+) : (
+  <a
+    href={post.url}
+    target={isExternal ? '_blank' : undefined}
+    rel={isExternal ? 'noopener noreferrer' : undefined}
+    class="group flex items-center justify-between gap-20 transition-colors duration-200 md:gap-20"
+  >
+    <span class="text-foreground group-hover:text-primary truncate">{post.title}</span>
+    <span class="text-foreground/50 group-hover:text-primary shrink-0 font-mono text-xs font-light">{formatPostDate(post.date)}</span>
+  </a>
+)}

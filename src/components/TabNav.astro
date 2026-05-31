@@ -1,0 +1,41 @@
+---
+const pathname = Astro.url.pathname
+const normalized = pathname.replace(/\/$/, '') || '/'
+
+const langRoots = ['/', '/es', '/pt']
+const isHome = langRoots.includes(normalized)
+const isProjects = /\/(projects|portfolio|portafolio|portifolio)(\/|$)/.test(pathname)
+const isBlog = /\/blogs(\/|$)/.test(pathname)
+
+const tabs = [
+  { label: 'Home', href: '/', active: isHome },
+  { label: 'Projects', href: '/projects', active: isProjects },
+  { label: 'Blog', href: '/blogs', active: isBlog },
+]
+---
+
+<nav class="flex items-center gap-5 text-base">
+  {tabs.map((tab) => (
+    <a
+      href={tab.href}
+      class:list={[
+        'group relative transition-colors duration-200',
+        tab.active ? 'text-foreground' : 'text-foreground/50 hover:text-foreground',
+      ]}
+    >
+      {tab.label}
+      <svg
+        aria-hidden="true"
+        class:list={[
+          'pointer-events-none absolute -bottom-1 left-0 h-1 w-full text-foreground/40 transition-opacity duration-300',
+          tab.active ? 'opacity-100' : 'opacity-0 group-hover:opacity-100',
+        ]}
+      >
+        <pattern id={`dots-${tab.label}`} x="0" y="0" width="6" height="4" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="2" r="1" fill="currentColor"></circle>
+        </pattern>
+        <rect width="100%" height="100%" fill={`url(#dots-${tab.label})`}></rect>
+      </svg>
+    </a>
+  ))}
+</nav>
