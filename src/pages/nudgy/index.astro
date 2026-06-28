@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const features = [
+  {
+    title: 'Gentle nudges',
+    description:
+      'Nudgy appears on the sites you choose, then gets out of the way. It encourages the next better step without blocking the page.',
+  },
+  {
+    title: 'Do-More and Do-Less lists',
+    description:
+      'Pick the places you want to spend more time on, and the ones you want a softer relationship with.',
+  },
+  {
+    title: 'Local stats',
+    description:
+      'See Do-More vs. Do-Less time, daily trends, per-site breakdowns, your goal, and your streak.',
+  },
+  {
+    title: 'Private by design',
+    description:
+      'No accounts, no backend, no analytics, no ads, and no network calls. Your settings and stats stay on your device.',
+  },
+]
+
+const screenshots = [
+  {
+    src: '/nudgy/popup-status.png',
+    alt: 'Nudgy popup showing current status and today at a glance',
+    label: 'Popup status',
+  },
+  {
+    src: '/nudgy/do-less-nudge.png',
+    alt: 'Nudgy in-page nudge on a Do-Less site',
+    label: 'Do-Less nudge',
+  },
+  {
+    src: '/nudgy/stats.png',
+    alt: 'Nudgy stats page with trends and per-site breakdowns',
+    label: 'Local stats',
+  },
+]
+---
+
+<BaseLayout
+  title="Nudgy - gentle focus buddy"
+  description="Nudgy is a cute, private browser extension that gently nudges you toward focus. 100% local, no accounts."
+>
+  <div class="mx-auto max-w-2xl px-4 pb-14 pt-4 md:pt-8">
+    <div class="flex items-center justify-between">
+      <a
+        href="/"
+        class="group relative font-mono text-xs font-light text-neutral-500 transition-colors duration-200 hover:text-neutral-200"
+      >
+        <span class="relative inline-block">
+          back
+          <span
+            class="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-neutral-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          ></span>
+        </span>
+      </a>
+      <a
+        href="/nudgy/privacy"
+        class="group relative font-mono text-xs font-light text-neutral-500 transition-colors duration-200 hover:text-neutral-200"
+      >
+        <span class="relative inline-block">
+          privacy
+          <span
+            class="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-neutral-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          ></span>
+        </span>
+      </a>
+    </div>
+
+    <section class="mt-12">
+      <div class="flex items-center gap-3">
+        <img
+          src="/nudgy/icon128.png"
+          alt="Nudgy"
+          class="size-14 rounded-xl object-cover shadow-lg ring-1 ring-white/10"
+        />
+        <div>
+          <p class="font-mono text-xs uppercase tracking-wide text-violet-300">
+            Browser extension
+          </p>
+          <h1
+            class="text-3xl font-semibold tracking-tight text-neutral-50 md:text-4xl"
+          >
+            Nudgy
+          </h1>
+        </div>
+      </div>
+
+      <p class="mt-6 text-pretty text-lg leading-8 text-neutral-200">
+        A cute little focus buddy for Chrome and Edge. Nudgy gently nudges you
+        toward the sites you want to spend more time on, and softly away from
+        the ones you would rather do less of.
+      </p>
+
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+        <a
+          href="/nudgy/privacy"
+          class="inline-flex h-10 items-center justify-center rounded-md bg-neutral-50 px-4 text-sm font-medium text-neutral-950 transition-colors hover:bg-neutral-200"
+        >
+          Privacy policy
+        </a>
+        <a
+          href="mailto:bhaveshsinghbiz@gmail.com?subject=Nudgy"
+          class="inline-flex h-10 items-center justify-center rounded-md border border-white/10 px-4 text-sm font-medium text-neutral-200 transition-colors hover:bg-white/5"
+        >
+          Contact
+        </a>
+      </div>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="font-mono text-sm uppercase tracking-wide text-neutral-500">
+        What it does
+      </h2>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        {
+          features.map((feature) => (
+            <article class="rounded-md border border-white/10 bg-white/[0.03] p-4">
+              <h3 class="text-sm font-medium text-neutral-50">
+                {feature.title}
+              </h3>
+              <p class="mt-2 text-pretty text-sm leading-6 text-neutral-400">
+                {feature.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="font-mono text-sm uppercase tracking-wide text-neutral-500">
+        Screens
+      </h2>
+      <div class="mt-5 flex flex-col gap-8">
+        {
+          screenshots.map((screenshot) => (
+            <figure>
+              <img
+                src={screenshot.src}
+                alt={screenshot.alt}
+                class="w-full rounded-md shadow-lg ring-1 ring-white/10"
+              />
+              <figcaption class="mt-2 font-mono text-xs text-neutral-500">
+                {screenshot.label}
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mt-14 border-t border-white/10 pt-8">
+      <h2 class="text-xl font-medium tracking-tight text-neutral-50">
+        Built to stay on your device
+      </h2>
+      <p class="mt-4 text-pretty text-base leading-7 text-neutral-400">
+        Nudgy has no sign-in, no server, no tracking pixels, and no analytics.
+        Your lists, snooze state, focus goal, and usage stats are stored in
+        Chrome extension storage on your own device.
+      </p>
+    </section>
+  </div>
+</BaseLayout>
