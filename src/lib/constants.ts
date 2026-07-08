@@ -58,10 +58,16 @@ export const STUDIES = [
 
 export const EXPERIENCE = [
   {
+    id: 'auditbot',
+    start: '2026',
+    link: 'https://auditbot.co/',
+    end: 'Current',
+  },
+  {
     id: 'schbang',
     start: '2025',
     link: 'https://www.schbang.com/',
-    end: 'Current',
+    end: '2026',
   },
   {
     id: 'level',

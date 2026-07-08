@@ -116,9 +116,14 @@ export const ui = {
     // Experience - Common
     'experience.current': 'Current',
 
+    // Experience - AuditBot
+    'experience.auditbot.company': 'AuditBot',
+    'experience.auditbot.position': 'Applied AI Engineer',
+    'experience.auditbot.location': 'United Kingdom · Remote',
+
     // Experience - Schbang Labs
     'experience.schbang.company': 'Schbang Labs',
-    'experience.schbang.position': 'Team Lead - Building AI Solutions',
+    'experience.schbang.position': 'Tech Lead - Building AI Solutions',
     'experience.schbang.location': 'Mumbai, India',
     'experience.schbang.tasks.0':
       'Researched and improved RAG (Retrieval-Augmented Generation) output by 3x using modern RAG preprocessing techniques and vector database optimization.',
@@ -233,9 +238,14 @@ export const ui = {
     // Experience - Common
     'experience.current': 'Actual',
 
+    // Experience - AuditBot
+    'experience.auditbot.company': 'AuditBot',
+    'experience.auditbot.position': 'Ingeniero de IA Aplicada',
+    'experience.auditbot.location': 'Reino Unido · Remoto',
+
     // Experience - Schbang Labs
     'experience.schbang.company': 'Schbang Labs',
-    'experience.schbang.position': 'Líder de Equipo - Soluciones de IA',
+    'experience.schbang.position': 'Líder Técnico - Soluciones de IA',
     'experience.schbang.location': 'Mumbai, India',
     'experience.schbang.tasks.0':
       'Investigación y mejora de resultados RAG (Generación Aumentada por Recuperación) en 3x utilizando técnicas modernas de preprocesamiento RAG y optimización de bases de datos vectoriales.',
@@ -351,9 +361,14 @@ export const ui = {
     // Experience - Common
     'experience.current': 'Atual',
 
+    // Experience - AuditBot
+    'experience.auditbot.company': 'AuditBot',
+    'experience.auditbot.position': 'Engenheiro de IA Aplicada',
+    'experience.auditbot.location': 'Reino Unido · Remoto',
+
     // Experience - Schbang Labs
     'experience.schbang.company': 'Schbang Labs',
-    'experience.schbang.position': 'Líder de Equipe - Soluções de IA',
+    'experience.schbang.position': 'Líder Técnico - Soluções de IA',
     'experience.schbang.location': 'Mumbai, Índia',
     'experience.schbang.tasks.0':
       'Pesquisou e melhorou a saída RAG (Geração Aumentada por Recuperação) em 3x usando técnicas modernas de pré-processamento RAG e otimização de banco de dados vetorial.',

@@ -1,8 +1,8 @@
 ---
 company: 'Schbang Labs'
-role: 'Team Lead - Building AI Solutions'
+role: 'Tech Lead - Building AI Solutions'
 dateStart: '01/01/2025'
-dateEnd: 'Current'
+dateEnd: '04/30/2026'
 ---
 
 - Researched and improved RAG (Retrieval-Augmented Generation) output by 3x using modern RAG preprocessing techniques and vector database optimization.
