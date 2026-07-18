@@ -1,5 +1,10 @@
 ---
+import { Image } from 'astro:assets'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import nudgyIcon from '../../assets/nudgy/icon128.png'
+import popupStatus from '../../assets/nudgy/popup-status.png'
+import doLessNudge from '../../assets/nudgy/do-less-nudge.png'
+import nudgyStats from '../../assets/nudgy/stats.png'
 
 const features = [
   {
@@ -26,17 +31,17 @@ const features = [
 
 const screenshots = [
   {
-    src: '/nudgy/popup-status.png',
+    src: popupStatus,
     alt: 'Nudgy popup showing current status and today at a glance',
     label: 'Popup status',
   },
   {
-    src: '/nudgy/do-less-nudge.png',
+    src: doLessNudge,
     alt: 'Nudgy in-page nudge on a Do-Less site',
     label: 'Do-Less nudge',
   },
   {
-    src: '/nudgy/stats.png',
+    src: nudgyStats,
     alt: 'Nudgy stats page with trends and per-site breakdowns',
     label: 'Local stats',
   },
@@ -75,9 +80,12 @@ const screenshots = [
 
     <section class="mt-12">
       <div class="flex items-center gap-3">
-        <img
-          src="/nudgy/icon128.png"
+        <Image
+          src={nudgyIcon}
           alt="Nudgy"
+          width={56}
+          densities={[1, 2]}
+          loading="eager"
           class="size-14 rounded-xl object-cover shadow-lg ring-1 ring-white/10"
         />
         <div>
@@ -142,9 +150,12 @@ const screenshots = [
         {
           screenshots.map((screenshot) => (
             <figure>
-              <img
+              <Image
                 src={screenshot.src}
                 alt={screenshot.alt}
+                width={672}
+                densities={[1, 2]}
+                loading="lazy"
                 class="w-full rounded-md shadow-lg ring-1 ring-white/10"
               />
               <figcaption class="mt-2 font-mono text-xs text-neutral-500">

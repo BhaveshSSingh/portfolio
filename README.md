@@ -53,16 +53,12 @@ To install and run the project locally, follow these steps:
 
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 4. Start the development server:
 
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
 5. Open your browser and visit `http://localhost:3000` to see your portfolio in action.

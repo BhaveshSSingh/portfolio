@@ -1,6 +1,13 @@
 ---
+import { Image } from 'astro:assets'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import PostListItem from '../components/PostListItem.astro'
+import bhaveshPortrait from '../assets/bhavesh.jpeg'
+import auditbotIcon from '../assets/brands/auditbot.png'
+import schbangIcon from '../assets/brands/schbang.png'
+import secondBrainIcon from '../assets/brands/secondbrain.png'
+import xLogo from '../assets/brands/x.svg?raw'
+import githubLogo from '../assets/brands/github.svg?raw'
 import TabNav from '../components/TabNav.astro'
 import { LINKS } from '../lib/constants'
 import { POSTS } from '../lib/posts'
@@ -13,9 +20,9 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
 const brandIcons = {
-  auditbot: 'https://auditbot.co/wp-content/uploads/2025/03/favicon-150x150.png',
-  schbang: 'https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649a7faa42bc962c81b8c90f_Schbang%20Logomark%20(Custom)%20(1).png',
-  secondBrain: 'https://secondbrain.schbanglabs.com/favicon.ico',
+  auditbot: auditbotIcon,
+  schbang: schbangIcon,
+  secondBrain: secondBrainIcon,
 }
 
 const thingsIDo = [
@@ -77,9 +84,12 @@ const homePosts = POSTS.slice(0, 3)
   <div class="mx-auto max-w-2xl px-4 pt-4 md:pt-8 pb-10">
     <section>
       <div class="flex items-center gap-2">
-        <img
-          src="/bhavesh.jpeg"
+        <Image
+          src={bhaveshPortrait}
           alt="Bhavesh Singh"
+          width={24}
+          densities={[1, 2]}
+          loading="eager"
           class="aspect-square size-6 rounded-md object-cover shadow-2xl"
         />
         <h1 class="text-xl font-medium tracking-tight text-foreground md:text-2xl">
@@ -92,11 +102,11 @@ const homePosts = POSTS.slice(0, 3)
       </div>
 
       <p class="pt-5 text-base text-foreground/90">
-        I'm Bhavesh — I enjoy making tech products and providing value outside of tech. Currently diving deep into AI and building products at <a href="https://auditbot.co/" target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><img src={brandIcons.auditbot} alt="" class="relative top-0.5 size-4 shrink-0 rounded-sm" loading="lazy" />AuditBot</a>. Previously, I was Tech Lead at <a href="https://www.schbang.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><img src={brandIcons.schbang} alt="" class="relative top-0.5 size-4 shrink-0 rounded-sm" loading="lazy" />Schbang</a>, where I led engineering for <a href="https://secondbrain.schbanglabs.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><img src={brandIcons.secondBrain} alt="" class="relative top-0.5 size-4 shrink-0 rounded-sm" loading="lazy" />SecondBrain</a>. Beyond tech, I lift weights and watch anime.
+        I'm Bhavesh — I enjoy making tech products and providing value outside of tech. Currently diving deep into AI and building products at <a href="https://auditbot.co/" target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><Image src={brandIcons.auditbot} alt="" width={16} densities={[1, 2]} loading="eager" class="relative top-0.5 size-4 shrink-0 rounded-sm" />AuditBot</a>. Previously, I was Tech Lead at <a href="https://www.schbang.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><Image src={brandIcons.schbang} alt="" width={16} densities={[1, 2]} loading="eager" class="relative top-0.5 size-4 shrink-0 rounded-sm" />Schbang</a>, where I led engineering for <a href="https://secondbrain.schbanglabs.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><Image src={brandIcons.secondBrain} alt="" width={16} densities={[1, 2]} loading="eager" class="relative top-0.5 size-4 shrink-0 rounded-sm" />SecondBrain</a>. Beyond tech, I lift weights and binge watch shows 📺.
       </p>
 
       <p class="pt-4 text-base text-foreground/90">
-        Say hi on <a href={LINKS.twitter} target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><img src="https://svgl.app/library/x_dark.svg" alt="" class="relative top-0.5 size-4 shrink-0" loading="lazy" />Twitter</a> and <a href={LINKS.github} target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><img src="https://svgl.app/library/github_dark.svg" alt="" class="relative top-0.5 size-4 shrink-0" loading="lazy" />GitHub</a>.
+        Say hi on <a href={LINKS.twitter} target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><span class="relative top-0.5 inline-block size-4 shrink-0 [&>svg]:size-full" set:html={xLogo} />Twitter</a> and <a href={LINKS.github} target="_blank" rel="noopener noreferrer" class="inline-flex items-baseline gap-1.5 text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground/60"><span class="relative top-0.5 inline-block size-4 shrink-0 [&>svg]:size-full" set:html={githubLogo} />GitHub</a>.
       </p>
     </section>
 
@@ -170,15 +180,14 @@ const homePosts = POSTS.slice(0, 3)
     <section class="mt-12 flex flex-col gap-4">
       <h2 class="font-mono text-sm uppercase tracking-wide text-foreground/40">Writing</h2>
       <div class="flex flex-col gap-4">
-        {homePosts.map((post) => (
-          <PostListItem post={post} />
+        {/* Thumbnails sit at offsetTop 740/834/928 on a ~1046px page, so the
+            first two land above a typical (~850px) fold and the third below. */}
+        {homePosts.map((post, i) => (
+          <PostListItem post={post} eager={i < 2} />
         ))}
       </div>
     </section>
 
-    <div class="my-8 text-sm text-foreground/40 text-balance">
-      {new Date().getFullYear()} © Bhavesh Singh.
-    </div>
   </div>
 </BaseLayout>
 

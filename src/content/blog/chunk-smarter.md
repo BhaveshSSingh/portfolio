@@ -1,14 +1,14 @@
 ---
 title: 'Chunk smarter: why context beats text splitting'
 description: 'Three ways to cut a document for RAG — text splitting, semantic chunking, and contextual chunking. Same document, three cuts. Only the last one stops the retriever from lying.'
-date: '2026-07-18'
+date: '2026-07-11'
 ---
 
 I gave a talk on chunking recently. This is the written version.
 
 It walks through three ways to cut a document for RAG. Text-based splitting, semantic chunking, and contextual chunking. Same document, three cuts. Only the last one stops the retriever from lying.
 
-![Chunk smarter: why context beats text splitting](/blogs/chunk-smarter/01-hero.png)
+![Chunk smarter: why context beats text splitting](../../assets/blogs/chunk-smarter/01-hero.png)
 
 ## The hallucination trap
 
@@ -34,7 +34,7 @@ The exact opposite of what was asked, stated with full confidence.
 
 Why it happens: naive chunking made the two passages look like duplicates, so the retriever grabbed the wrong one.
 
-![Bad chunks give wrong answers, confidently](/blogs/chunk-smarter/02-hallucination-trap.png)
+![Bad chunks give wrong answers, confidently](../../assets/blogs/chunk-smarter/02-hallucination-trap.png)
 
 ## "Why not just rerank?"
 
@@ -48,7 +48,7 @@ Reranking buys time at small scale. It collapses as the knowledge base grows. An
 
 Fix it where it breaks: at the cut, not after.
 
-![Reranking collapses as the knowledge base grows](/blogs/chunk-smarter/03-rerank.png)
+![Reranking collapses as the knowledge base grows](../../assets/blogs/chunk-smarter/03-rerank.png)
 
 ## Option 1: fixed-size chunks with overlap
 
@@ -140,11 +140,11 @@ Now "how do I renew?" matches the Renew chunk and pulls away from Cancel. The co
 
 The cost: one LLM call per chunk, at index time. Not per query.
 
-![Give each chunk its context back, before you embed it](/blogs/chunk-smarter/05-contextual.png)
+![Give each chunk its context back, before you embed it](../../assets/blogs/chunk-smarter/05-contextual.png)
 
 ## One document, three ways to cut it
 
-![One document, three ways to cut it](/blogs/chunk-smarter/04-three-cuts.png)
+![One document, three ways to cut it](../../assets/blogs/chunk-smarter/04-three-cuts.png)
 
 Text-based cuts at a fixed length and splits mid-topic. Semantic cuts where the topic shifts. Contextual makes the same topic cuts, then situates each chunk in the whole document with a context blurb.
 
@@ -162,4 +162,4 @@ If you need fast and free, text-based gets you moving. If you need better recall
 
 Reach for contextual chunking by default.
 
-![Same doc, three cuts. Only one gets renew right.](/blogs/chunk-smarter/06-verdict.png)
+![Same doc, three cuts. Only one gets renew right.](../../assets/blogs/chunk-smarter/06-verdict.png)

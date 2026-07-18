@@ -1,18 +1,21 @@
 ---
+import { Image } from 'astro:assets'
 import type { Post } from '../lib/posts'
 import { formatPostDate } from '../lib/posts'
 
 interface Props {
   post: Post
+  /** Set for thumbnails in the initial viewport — lazy-loading those delays LCP. */
+  eager?: boolean
 }
 
-const { post } = Astro.props
+const { post, eager = false } = Astro.props
 const isDisabled = post.url === '#'
 const isExternal = post.url.startsWith('http')
 ---
 
 {isDisabled ? (
-  <div class="group flex items-center justify-between gap-20 md:gap-20">
+  <div class="group flex items-center justify-between gap-6">
     <span class="text-foreground/50 truncate">
       {post.title}
       <span class="font-mono text-xs font-light text-foreground/40 ml-2">(coming soon)</span>
@@ -24,9 +27,34 @@ const isExternal = post.url.startsWith('http')
     href={post.url}
     target={isExternal ? '_blank' : undefined}
     rel={isExternal ? 'noopener noreferrer' : undefined}
-    class="group flex items-center justify-between gap-20 transition-colors duration-200 md:gap-20"
+    class="group flex gap-4 sm:gap-5"
   >
-    <span class="text-foreground group-hover:text-primary truncate">{post.title}</span>
-    <span class="text-foreground/50 group-hover:text-primary shrink-0 font-mono text-xs font-light">{formatPostDate(post.date)}</span>
+    {post.image && (
+      <Image
+        src={post.image}
+        alt={post.title}
+        width={256}
+        densities={[1, 2]}
+        loading={eager ? 'eager' : 'lazy'}
+        class="h-16 w-24 shrink-0 rounded-md object-cover ring-1 ring-inset ring-white/10 transition-all duration-200 group-hover:ring-white/20 sm:h-[76px] sm:w-32"
+      />
+    )}
+
+    <div class="min-w-0 flex-1">
+      <div class="flex items-baseline justify-between gap-4">
+        <h3 class="truncate text-foreground transition-colors duration-200 group-hover:text-primary">
+          {post.title}
+        </h3>
+        <span class="shrink-0 font-mono text-xs font-light text-foreground/50 transition-colors duration-200 group-hover:text-primary">
+          {formatPostDate(post.date)}
+        </span>
+      </div>
+
+      {post.excerpt && (
+        <p class="mt-1.5 line-clamp-2 text-pretty text-sm leading-6 text-neutral-400">
+          {post.excerpt}
+        </p>
+      )}
+    </div>
   </a>
 )}

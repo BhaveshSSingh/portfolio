@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import uprightIcon from '../../assets/upright/icon.png'
 
 const features = [
   {
@@ -68,9 +70,12 @@ const steps = [
 
     <section class="mt-12">
       <div class="flex items-center gap-4">
-        <img
-          src="/upright/icon.png"
+        <Image
+          src={uprightIcon}
           alt="Upright"
+          width={56}
+          densities={[1, 2]}
+          loading="eager"
           class="size-14 shrink-0 drop-shadow-lg"
         />
         <div>

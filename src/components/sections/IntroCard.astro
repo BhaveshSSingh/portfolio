@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets'
 import Card from '../Card.astro'
+import bhaveshPortrait from '../../assets/bhavesh.jpeg'
 import { Button } from '../ui/button'
 import { LINKS } from '../../lib/constants'
 import { Linkedin, Github, Mail } from 'lucide-react'
@@ -40,10 +42,11 @@ const t = useTranslations(lang)
       </div>
     </div>
     <div class="relative flex items-center justify-center p-2">
-      <img
-        width="300"
-        height="300"
-        src="/bhavesh.jpeg"
+      <Image
+        src={bhaveshPortrait}
+        width={300}
+        height={300}
+        densities={[1, 2]}
         class="pointer-events-none z-10 max-h-[300px] w-auto rotate-3 rounded-2xl border-2 border-white/10 object-cover shadow-2xl transition-transform hover:rotate-0 md:relative md:max-h-[300px]"
         alt="Bhavesh Singh"
       />

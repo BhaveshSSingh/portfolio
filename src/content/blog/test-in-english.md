@@ -34,7 +34,7 @@ The instruction reads like a sentence. An AI model looks at the page and works o
 await stagehand.act("click on add to cart");
 ```
 
-![act(): interact with a web page](/blogs/test-in-english/01-act.png)
+![act(): interact with a web page](../../assets/blogs/test-in-english/01-act.png)
 
 **extract** grabs data from a page. You can define a schema for the result, or just ask.
 
@@ -42,7 +42,7 @@ await stagehand.act("click on add to cart");
 await stagehand.extract("extract the name of the repository");
 ```
 
-![extract(): structured data from a webpage](/blogs/test-in-english/02-extract.png)
+![extract(): structured data from a webpage](../../assets/blogs/test-in-english/02-extract.png)
 
 **observe** turns a page into a checklist of reliable, executable actions. You ask it something like "find the login button" and it returns structured actions you can execute or validate before acting.
 
@@ -50,7 +50,7 @@ await stagehand.extract("extract the name of the repository");
 await stagehand.observe("find the login button");
 ```
 
-![observe(): discover and plan executable actions](/blogs/test-in-english/03-observe.png)
+![observe(): discover and plan executable actions](../../assets/blogs/test-in-english/03-observe.png)
 
 **agent** takes a whole task, not a step.
 
@@ -60,7 +60,7 @@ await agent.execute("apply for a job at browserbase");
 
 The agent doesn't know where anything in your app lives. It has to find its way around, the same way a user who just landed on your product would.
 
-![agent(): automate complex workflows](/blogs/test-in-english/04-agent.png)
+![agent(): automate complex workflows](../../assets/blogs/test-in-english/04-agent.png)
 
 ## The part that got me: the agent as a QA tester
 
