@@ -7,6 +7,12 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'test-in-english',
+    title: 'Test in English: a week with Stagehand',
+    date: '2026-07-18',
+    url: '/blogs/test-in-english',
+  },
+  {
     slug: 'chunk-smarter',
     title: 'Chunk smarter: why context beats text splitting',
     date: '2026-07-18',
