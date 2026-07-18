@@ -1,0 +1,162 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+import { formatPostDate } from '../../lib/posts'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+interface Props {
+  entry: CollectionEntry<'blog'>
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<BaseLayout title={`${entry.data.title} - ${t('home.title')}`} description={entry.data.description}>
+  <main class="mx-auto max-w-2xl px-4 pb-14 pt-4 md:pt-8">
+    <a
+      href="/blogs"
+      class="group font-mono text-xs font-light text-neutral-500 transition-colors duration-200 hover:text-neutral-200"
+    >
+      ← back to blog
+    </a>
+
+    <article class="mt-8">
+      <header class="space-y-3">
+        <h1 class="text-2xl font-semibold tracking-tight text-white md:text-3xl">{entry.data.title}</h1>
+        <p class="font-mono text-xs font-light text-foreground/50">{formatPostDate(entry.data.date)}</p>
+      </header>
+
+      <div class="mt-6 h-px w-full bg-white/10"></div>
+
+      <div class="post-body mt-8">
+        <Content />
+      </div>
+    </article>
+
+    <div class="pt-20 font-mono text-xs text-neutral-600">2025 © Bhavesh Singh.</div>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  .post-body {
+    color: rgb(212 212 212);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .post-body > * + * {
+    margin-top: 1.25rem;
+  }
+  .post-body h2 {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-top: 2.75rem;
+    margin-bottom: 0.25rem;
+  }
+  .post-body h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+  }
+  .post-body p {
+    color: rgb(212 212 212);
+  }
+  .post-body strong {
+    color: #fff;
+    font-weight: 600;
+  }
+  .post-body a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgb(120 120 120);
+  }
+  .post-body a:hover {
+    color: rgb(160 160 160);
+  }
+  .post-body ul {
+    list-style: disc;
+    padding-left: 1.35rem;
+  }
+  .post-body li {
+    margin-top: 0.4rem;
+  }
+  .post-body li::marker {
+    color: rgb(120 120 120);
+  }
+  .post-body blockquote {
+    border-left: 3px solid rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0 0.25rem 1.1rem;
+    color: rgb(190 190 190);
+    font-style: normal;
+  }
+  .post-body blockquote strong {
+    color: #fff;
+  }
+  .post-body img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  /* Shiki code blocks */
+  .post-body pre {
+    background: #16161a !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1rem 1.15rem;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .post-body pre code {
+    background: transparent;
+    padding: 0;
+    font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  /* inline code */
+  .post-body :not(pre) > code {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+    padding: 0.12em 0.4em;
+    font-size: 0.85em;
+    font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: #fff;
+  }
+  .post-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+  }
+  .post-body th,
+  .post-body td {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.55rem 0.8rem;
+    text-align: left;
+  }
+  .post-body th {
+    color: #fff;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .post-body td {
+    color: rgb(200 200 200);
+  }
+</style>

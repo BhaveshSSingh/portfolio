@@ -12,4 +12,13 @@ const work = defineCollection({
     }),
 })
 
-export const collections = { work }
+const blog = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        date: z.string(),
+    }),
+})
+
+export const collections = { work, blog }
